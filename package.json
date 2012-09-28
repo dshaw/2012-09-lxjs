@@ -1,0 +1,30 @@
+{
+  "name": "dshaw-talk-2012-09-lxjs",
+  "version": "0.1.0",
+  "description": "Observability - for Node.js and Realtime Software",
+  "keywords": [
+    "node.js",
+    "lxjs",
+    "observability",
+    "realtime",
+    "socket.io"
+  ],
+  "author": "Daniel D. Shaw <dshaw@dshaw.com> (http://dshaw.com)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dshaw/2012-09-lxjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dshaw/2012-09-lxjs/issues"
+  },
+  "license": "MIT",
+  "main": "./server.js",
+  "dependencies": {
+    "express": "~2.5.9",
+    "optimist": "~0.3.4",
+    "redis": "~0.7.2"
+  },
+  "engines": {
+    "node": "*"
+  }
+}
