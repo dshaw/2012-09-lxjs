@@ -1,78 +1,78 @@
 <!doctype html>  
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-    <title>Observability - @dshaw</title>
+<head>
+  <meta charset="utf-8">
+  <title>Observability - @dshaw</title>
 
-		<meta name="description" content="Observability - for Node.js and Realtime Software.">
-		<meta name="author" content="Daniel D. Shaw - @dshaw">
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		
-		<!--<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
-		
-		<link rel="stylesheet" href="./assets/css/reset.css">
-		<link rel="stylesheet" href="./assets/css/main.css">
-		<link rel="stylesheet" href="./assets/css/print.css" type="text/css" media="print">
-		<link rel="stylesheet" href="./assets/css/zenburn.css">
-    <style type="text/css">
-      #reveal section img.noborder {
-        border: 0
-      }
-      #reveal h1, #reveal h2, #reveal h3, #reveal h4 {
-        /*margin-top: 40px;*/
-        /*margin-top: 20px;*/
-      }
-      #reveal h1.title {
-        font-size: 108px
-      }
-      #reveal h1.subtitle {
-        font-size: 54px;
-        line-height: 120%;
-      }
-      #reveal section img.avatar {
-        margin-top: 20px;
-      }
-      #reveal section img.intro {
-        width: 200px;
-        height: 200px;
-      }
-      #reveal h1.buzz {
-        font-size: 72px;
-        line-height: 120%;
-      }
-      #reveal h1.aka,
-      #reveal h1.intro {
-        font-size: 96px
-      }
-      .enterprisestack {
-        padding: 0 1em;
-      }
-      .def {
-        font-size: 1.6em;
-        line-height: 100%;
-        margin: .2em 0;
-      }
-      cite {
-        font-size: 0.8em;
-      }
-      .thelist {
-        font-size: 1.6em;
-        line-height: 1.6em;
-      }
-      .lilpad {
-        padding: 2em;
-      }
-    </style>
-	</head>
-	<body>
-		<div id="reveal">
+  <meta name="description" content="Observability - for Node.js and Realtime Software.">
+  <meta name="author" content="Daniel D. Shaw - @dshaw">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-			<!-- Used to fade in a background when a specific slide state is reached -->
-			<div class="state-background"></div>
-			
-			<!-- Any section element inside of this container is displayed as a slide -->
-      <div class="slides">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/print.css" type="text/css" media="print">
+  <link rel="stylesheet" href="./assets/css/zenburn.css">
+  <style type="text/css">
+    #reveal section img.noborder {
+      border: 0
+    }
+    #reveal h1, #reveal h2, #reveal h3, #reveal h4 {
+      /*margin-top: 40px;*/
+      /*margin-top: 20px;*/
+    }
+    #reveal h1.title {
+      font-size: 108px
+    }
+    #reveal h1.subtitle {
+      font-size: 54px;
+      line-height: 120%;
+    }
+    #reveal section img.avatar {
+      margin-top: 20px;
+    }
+    #reveal section img.intro {
+      width: 200px;
+      height: 200px;
+    }
+    #reveal h1.buzz {
+      font-size: 72px;
+      line-height: 120%;
+    }
+    #reveal h1.aka,
+    #reveal h1.intro {
+      font-size: 96px
+    }
+    .enterprisestack {
+      padding: 0 1em;
+    }
+    .def,
+    .hilist {
+      font-size: 1.6em;
+      line-height: 100%;
+      margin: .2em 0;
+    }
+    .lilpad {
+      padding: 2em;
+    }
+    cite {
+      font-size: 0.8em;
+    }
+    code {
+      font-size: 1.4em;
+      line-height: 120%;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="reveal">
+
+    <!-- Used to fade in a background when a specific slide state is reached -->
+    <div class="state-background"></div>
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
 
       <!-- Title slide -->
       <section>
@@ -155,7 +155,7 @@
         <section>
           <h2 style="margin-top: 40px;">Realtime App Priorities</h2>
 
-          <ol class="def">
+          <ol class="hilist">
             <li>Scalability</li>
             <li>Observability</li>
           </ol>
@@ -177,6 +177,161 @@
         </section>
       </section>
 
+      <!-- Observability: what -->
+      <section>
+        <section>
+          <h2>Key Observables</h2>
+
+          <h1>Are we going to go into this?</h1>
+
+          <h2>Is there time???</h2>
+        </section>
+      </section>
+
+      <!-- Observability: tools -->
+      <section>
+        <section>
+          <h2>Observers Tools</h2>
+
+          <ol class="hilist">
+            <li>logging</li>
+            <li>log aggregation</li>
+            <li>health/status endpoints</li>
+            <li>REPL</li>
+            <li>monitoring</li>
+            <li>metrics</li>
+            <li>DTrace</li>
+          </ol>
+        </section>
+      </section>
+
+      <!-- Observability: logging -->
+      <section>
+        <section>
+          <h2>Logging</h2>
+
+          <p class="def">Logging is your friend.</p>
+
+          <ul style="width: 600px; margin-top: 40px;">
+            <li>Don't be afraid of logging.</li>
+            <li>Not logging, or severely limiting logging,
+                is a ridiculous premature optimization.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Logging</h2>
+
+          <p class="def">Yes, you <b><i>can</i></b> go too far.</p>
+
+          <ul style="width: 600px; margin-top: 40px;">
+            <li>Be careful with expensive to serialize objects.</li>
+            <li>Noise reduces observability.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Log Aggregation</h2>
+
+          <ol class="hilist" style="width: 600px; margin-top: 40px;">
+            <li>Loggly</li>
+            <li>Graylog2</li>
+            <li>Splunk</li>
+            <li>Winston</li>
+            <li>files + grep</li>
+          </ol>
+        </section>
+      </section>
+
+      <!-- Observability: health -->
+      <section>
+        <section>
+          <h2>Health/Status Endpoints</h2>
+
+          <p>Create a status or health endpoint.</p>
+
+          <ul>
+            <li>process.memory</li>
+            <li>process.uptime</li>
+            <li>process.pid</li>
+            <li>connections</li>
+            <li><i>proc: cpu microtime</i></li>
+          </ul>
+        </section>
+        <section>
+          <h2>/health</h2>
+
+          <pre><code contenteditable>
+app.get('/health', function(req, res){
+  res.send({
+    pid: process.pid,
+    memory: process.memoryUsage(),
+    uptime: process.uptime(),
+    connections: server.connections
+  })
+})
+          </code></pre>
+        </section>
+      </section>
+
+      <section>
+        <h2>REPL</h2>
+
+        <pre><code contenteditable>
+var net = require('net')
+  , options = { name: 'dshaw' }
+
+net.createServer(function (socket) {
+  repl.start(options.name + "> ", socket).context.app = app
+}).listen("/tmp/repl-app-" + options.name);
+        </code></pre>
+      </section>
+
+      <section>
+        <section>
+          <h2>Monitoring</h2>
+
+          <ol class="hilist" style="width: 600px; margin-top: 40px;">
+            <li>Nagios</li>
+            <li>reconnoiter</li>
+            <li>Circonus</li>
+            <li>Redis Monitor</li>
+          </ol>
+        </section>
+        <section>
+          <h2>Redis Monitor</h2>
+
+          <p>Monitor a single Redis or a cluster of Redis servers.</p>
+
+          <p>Now visualize what's going on on those servers.</p>
+
+          <p><img src="./assets/images/redis-monitor-screenshot.png" style="width: 60%"></p>
+
+          <h3><a href="https://github.com/dshaw/redis-monitor">github.com/dshaw/redis-monitor</a></h3>
+        </section>
+        <section>
+          <h2>Use MONITOR</h2>
+
+          <p>Monitoring with MONITOR is bad.</p>
+
+          <p>The MONITOR command is good and useful for debugging, but not monitoring.</p>
+
+          <h3><a href="http://redis.io/commands/monitor">redis.io/commands/monitor</a></h3>
+        </section>
+      </section>
+
+      <section>
+        <h2>Metrics</h2>
+
+        <ol class="hilist" style="width: 600px; margin-top: 40px;">
+          <li>statsd</li>
+          <li>Something new soon...</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Dtrace</h2>
+
+        <p><img class="noborder" src="./assets/images/dtrace_pony.png" style="width: 500px; background-color: #EEE; background: rgba(0, 0, 0, 0.1);"></p>
+      </section>
 
       <section>
         <h1>Thank you!</h1>
@@ -190,74 +345,74 @@
         <p>More at: <a href="http://github.com/dshaw">github.com/dshaw</a></p>
       </section>
 
-      </div>
+    </div>
 
-			<!-- The navigational controls UI -->
-			<aside class="controls">
-				<a class="left" href="#">&#x25C4;</a>
-				<a class="right" href="#">&#x25BA;</a>
-				<a class="up" href="#">&#x25B2;</a>
-				<a class="down" href="#">&#x25BC;</a>
-			</aside>
+    <!-- The navigational controls UI -->
+    <aside class="controls">
+      <a class="left" href="#">&#x25C4;</a>
+      <a class="right" href="#">&#x25BA;</a>
+      <a class="up" href="#">&#x25B2;</a>
+      <a class="down" href="#">&#x25BC;</a>
+    </aside>
 
-			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
-			<div class="progress"><span></span></div>
-			
-		</div>
+    <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+    <div class="progress"><span></span></div>
+
+  </div>
 
 
-    <!-- Hot JavaScript Action -->
-		<script src="./assets/js/reveal.js"></script>
+  <!-- Hot JavaScript Action -->
+  <script src="./assets/js/reveal.js"></script>
 
-		<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
-		<script src="./assets/js/highlight.js"></script>
-		<script src="./assets/js/classlist.js"></script>
-		
-		<script>
-			// Parse the query string into a key/value object
-			var query = {};
-			location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
-				query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
-			} );
+  <!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+  <script src="./assets/js/highlight.js"></script>
+  <script src="./assets/js/classlist.js"></script>
 
-			// Fires when a slide with data-state=customevent is activated
-			Reveal.addEventListener( 'customevent', function() {
-				alert( '"customevent" has fired' );
-			} );
+  <script>
+    // Parse the query string into a key/value object
+    var query = {};
+    location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+      query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+    } );
 
-			// Fires each time a new slide is activated
-			Reveal.addEventListener( 'slidechanged', function( event ) {
-				// event.indexh & event.indexv
-			} );
+    // Fires when a slide with data-state=customevent is activated
+    Reveal.addEventListener( 'customevent', function() {
+      alert( '"customevent" has fired' );
+    } );
 
-			Reveal.initialize({
-				// Display controls in the bottom right corner
-				controls: true,
+    // Fires each time a new slide is activated
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+      // event.indexh & event.indexv
+    } );
 
-				// Display a presentation progress bar
-				progress: true,
+    Reveal.initialize({
+      // Display controls in the bottom right corner
+      controls: true,
 
-				// If true; each slide will be pushed to the browser history
-				history: true,
+      // Display a presentation progress bar
+      progress: true,
 
-				// Loops the presentation, defaults to false
-				loop: false,
+      // If true; each slide will be pushed to the browser history
+      history: true,
 
-				// Flags if mouse wheel navigation should be enabled
-				mouseWheel: true,
+      // Loops the presentation, defaults to false
+      loop: false,
 
-				// Apply a 3D roll to links on hover
-				rollingLinks: true,
+      // Flags if mouse wheel navigation should be enabled
+      mouseWheel: true,
 
-				// UI style
-				theme: query.theme || 'default', // default/neon
+      // Apply a 3D roll to links on hover
+      rollingLinks: true,
 
-				// Transition style
-				transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
-			});
+      // UI style
+      theme: query.theme || 'default', // default/neon
 
-			hljs.initHighlightingOnLoad();
-		</script>
+      // Transition style
+      transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+    });
 
-	</body>
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</body>
 </html>
