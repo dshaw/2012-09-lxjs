@@ -177,17 +177,6 @@
         </section>
       </section>
 
-      <!-- Observability: what -->
-      <section>
-        <section>
-          <h2>Key Observables</h2>
-
-          <h1>Are we going to go into this?</h1>
-
-          <h2>Is there time???</h2>
-        </section>
-      </section>
-
       <!-- Observability: tools -->
       <section>
         <section>
@@ -273,16 +262,39 @@ app.get('/health', function(req, res){
       </section>
 
       <section>
-        <h2>REPL</h2>
+        <section>
+          <h2>REPL</h2>
 
-        <pre><code contenteditable>
-var net = require('net')
-  , options = { name: 'dshaw' }
+          <pre><code contenteditable>
+var net = require('net'),
+  , repl = require('repl');
 
 net.createServer(function (socket) {
-  repl.start(options.name + "> ", socket).context.app = app
-}).listen("/tmp/repl-app-" + options.name);
-        </code></pre>
+  repl.start({
+    prompt: 'repl> ',
+    input: socket,
+    output: socket
+  }).on('exit', function() {
+    socket.end();
+  })
+}).listen('/tmp/node-repl.sock');
+          </code></pre>
+        </section>
+        <section>
+          <h2>REPL: no excuses</h2>
+
+          <h3>Introducing Replify.</h3>
+
+          <pre><code contenteditable>
+npm install replify
+          </code></pre>
+          <pre><code contenteditable>
+var replify = require('replify')
+  , app = require('http').createServer()
+
+replify('realtime-9000', app)
+          </code></pre>
+        </section>
       </section>
 
       <section>
@@ -305,26 +317,33 @@ net.createServer(function (socket) {
 
           <p><img src="./assets/images/redis-monitor-screenshot.png" style="width: 60%"></p>
 
-          <h3><a href="https://github.com/dshaw/redis-monitor">github.com/dshaw/redis-monitor</a></h3>
+          <p><a href="https://github.com/dshaw/redis-monitor">github.com/dshaw/redis-monitor</a></p>
         </section>
         <section>
-          <h2>Use MONITOR</h2>
+          <h2>Redis: Use MONITOR for drop-in observation</h2>
 
-          <p>Monitoring with MONITOR is bad.</p>
+          <p>Monitoring with Redis MONITOR is bad.</p>
 
           <p>The MONITOR command is good and useful for debugging, but not monitoring.</p>
 
-          <h3><a href="http://redis.io/commands/monitor">redis.io/commands/monitor</a></h3>
+          <p><a href="http://redis.io/commands/monitor">redis.io/commands/monitor</a></p>
         </section>
       </section>
 
       <section>
-        <h2>Metrics</h2>
+        <section>
+          <h2>Metrics</h2>
 
-        <ol class="hilist" style="width: 600px; margin-top: 40px;">
-          <li>statsd</li>
-          <li>Something new soon...</li>
-        </ol>
+          <ol class="hilist" style="width: 600px; margin-top: 40px;">
+            <li>Etsy statsd</li>
+            <li>Something new soon from the Voxer Summer of Node.js Interns...</li>
+          </ol>
+        </section>
+        <section>
+          <h2>Summer of Node.js <3 Metrics</h2>
+
+          <p><img src="./assets/images/voxer-interns.jpg" style="width: 500px; background-color: #EEE; background: rgba(0, 0, 0, 0.1);"></p>
+        </section>
       </section>
 
       <section>
